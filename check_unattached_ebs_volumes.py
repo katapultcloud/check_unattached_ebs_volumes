@@ -320,7 +320,11 @@ def main():
             print('$' + str(total_price))
     # if total_price is False print message
     else:
-        print('no unused EBS volumes found')
+        if json_mode:
+            prices_and_sizes_dict = {}
+            print(json.dumps(prices_and_sizes_dict))
+        else:
+            print('no unused EBS volumes found')
 
 
 if __name__ == "__main__":
