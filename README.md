@@ -63,7 +63,7 @@ $12.328
 
 Using the script in json mode with different AWS profile. JSON output is parsed with `jq` for show.
 ```
-$ ./check_unattached_ebs_volumes.py --json | jq .
+$ ./check_unattached_ebs_volumes.py --profile ebs_user --json | jq .
 {
   "regional_data": {
     "eu-west-1": {
@@ -158,7 +158,7 @@ $ ./check_unattached_ebs_volumes.py --json | jq .
 
 Using the script in verbose mode with different AWS profile.
 ```
-$ ./check_unattached_ebs_volumes.py --verbose
+$ ./check_unattached_ebs_volumes.py --profile ebs_user --verbose
 
 checking: Asia Pacific (Mumbai)
 no unused volumes found...
@@ -215,6 +215,18 @@ no unused volumes found...
 Total Price
 -------------
 $12.328
+```
+
+Example when no unattached EBS volumes are found:
+```
+$ ./check_unattached_ebs_volumes.py
+no unused EBS volumes found
+```
+
+Example when no unattached EBS volumes are found in JSON output:
+```
+$ ./check_unattached_ebs_volumes.py --json | jq .
+{}
 ```
 
 ## Recommendations
