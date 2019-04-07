@@ -174,7 +174,8 @@ def resolve_region(region):
         'eu-west-3': 'EU (Paris)',
         'eu-west-2': 'EU (London)',
         'us-west-1': 'US West (N. California)',
-        'eu-central-1': 'EU (Frankfurt)'
+        'eu-central-1': 'EU (Frankfurt)',
+        'eu-north-1': 'EU (Stockholm)'
     }
     
     resolved_region = aws_region_map[region]
