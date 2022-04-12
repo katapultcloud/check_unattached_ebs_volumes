@@ -126,7 +126,7 @@ def get_all_volumes(auth):
 
 # extract unused EBS volumes and add them up based on EBS type
 def determine_unused_ebs(ebs_volumes):
-    final_sizes = {"gp2": 0, "standard": 0, "sc1": 0, "io1": 0, "st1": 0}
+    final_sizes = {"gp2": 0, "gp3": 0, "standard": 0, "sc1": 0, "io1": 0, "st1": 0}
     ebs_list = []
     unused_ebs = []
     # extract type, size, id and attachments from each EBS volume
